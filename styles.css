@@ -54,3 +54,86 @@ html{line-break:strict}
 h1,h2,h3,.lead,.catch,.copy{text-wrap:balance;overflow-wrap:normal;word-break:normal}
 p,li,dt,dd,figcaption{text-wrap:pretty;overflow-wrap:break-word;word-break:normal}
 @supports (word-break:auto-phrase){h1,h2,h3,.lead,.catch,.copy,p,li,dt,dd,figcaption{word-break:auto-phrase}}
+
+
+/* Mobile horizontal overflow repair 2026-09-16 */
+html,body{width:100%;max-width:100%;overflow-x:clip}
+@media(max-width:600px){
+  main,section,header,footer,nav,form,article,div,dl,ol,ul{min-width:0}
+  main,section,footer{max-width:100%}
+  img,video,svg,iframe{max-width:100%;height:auto}
+  h1,h2,h3,p,li,dt,dd,a,span{max-width:100%}
+  h1,h2,h3{overflow-wrap:break-word;word-break:normal}
+  p,li,dt,dd{overflow-wrap:break-word;word-break:normal}
+
+  header{width:100%;max-width:100%;padding-left:18px}
+  .logo{min-width:0;max-width:calc(100% - 70px)}
+  .logo>b{flex:0 0 auto}
+  .menu{flex:0 0 auto;margin-right:18px}
+  header nav{width:100%;max-width:100%;overflow-x:hidden}
+
+  .hero,.page-hero,.statement,.services,.philosophy,.projects,.numbers,.maintenance,
+  .service-detail,.support,.company-message,.representative,.company-profile,.values,
+  .contact-intro,.form-section,.contact-band,footer{width:100%;max-width:100%;overflow-x:hidden}
+
+  .hero-text{width:calc(100% - 40px);max-width:100%}
+  .hero h1{font-size:clamp(2.25rem,10.5vw,2.7rem)}
+  .hero-note{width:100%;max-width:100%}
+  .statement{grid-template-columns:28px minmax(0,1fr);gap:18px}
+  .statement>p{grid-column:2;min-width:0}
+
+  .service-row{grid-template-columns:35px minmax(0,1fr) 30px;column-gap:6px}
+  .service-row h3{min-width:0;font-size:clamp(1.15rem,6vw,1.45rem);overflow-wrap:break-word}
+  .project-grid{width:100%;max-width:100%;overscroll-behavior-x:contain}
+  .project-grid article{min-width:min(280px,82vw)}
+  .numbers>div{min-width:0}
+  .numbers strong{font-size:clamp(2.35rem,11vw,2.8rem)}
+  .maintenance li{min-width:0}
+
+  .contact-band-inner{width:100%;max-width:100%}
+  .contact-band-inner>a{width:100%;max-width:320px}
+  .marquee{max-width:none}
+
+  .page-hero{padding-left:20px;padding-right:20px}
+  .page-hero>div{min-width:0;max-width:100%}
+  .page-hero h1{font-size:clamp(2.35rem,11vw,2.9rem)}
+  .anchor-nav{width:100%;max-width:100%;overscroll-behavior-x:contain}
+  .anchor-nav a{flex:0 0 auto}
+
+  .service-detail{grid-template-columns:minmax(0,1fr)}
+  .detail-image{width:calc(100% - 12px);max-width:calc(100% - 12px);margin-right:12px}
+  .detail-copy{min-width:0}
+  .detail-copy>b{font-size:clamp(3.2rem,18vw,5rem)}
+  .detail-copy h2{font-size:clamp(2rem,10vw,2.8rem)}
+  .detail-copy ul{grid-template-columns:minmax(0,1fr)}
+  .detail-copy li{min-width:0}
+  .support,.company-message,.representative,.company-profile{grid-template-columns:minmax(0,1fr)}
+  .support-grid{grid-template-columns:minmax(0,1fr)}
+
+  .company-message{grid-template-columns:28px minmax(0,1fr);gap:18px}
+  .company-message>div:last-child{grid-column:2;min-width:0}
+  .company-message h2,.representative h2{font-size:clamp(2rem,9vw,2.65rem)}
+  .representative>div:last-child{width:100%;max-width:100%}
+  .company-profile dl,.company-profile dl div{width:100%;max-width:100%}
+  .company-profile dl div{grid-template-columns:88px minmax(0,1fr);gap:12px;padding-left:0;padding-right:0}
+  .company-profile dd{min-width:0;overflow-wrap:anywhere}
+  .values{grid-template-columns:minmax(0,1fr)}
+
+  .contact-intro{padding-left:20px;padding-right:20px}
+  .contact-intro h2{font-size:clamp(2rem,9vw,2.4rem)}
+  .contact-intro>a{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;width:100%;max-width:360px;padding:18px 20px;font-size:clamp(1.35rem,7vw,1.85rem)}
+  .contact-intro>a small{grid-column:2;text-align:left}
+  .form-section{grid-template-columns:minmax(0,1fr);padding-left:15px;padding-right:15px}
+  .form-section form{width:100%;max-width:100%;padding:36px 18px}
+  .field,.field input,.field select,.field textarea{min-width:0;max-width:100%}
+  .field.two{grid-template-columns:minmax(0,1fr)}
+  .form-section button{width:100%;max-width:100%}
+
+  footer{grid-template-columns:minmax(0,1fr);padding-left:20px;padding-right:20px}
+  .foot-logo{min-width:0;flex-wrap:wrap}
+  .foot-logo p{min-width:0}
+  footer nav{display:flex;flex-wrap:wrap;gap:14px 22px}
+  .portfolio-note,.copy{max-width:100%}
+
+  .term-keep{max-width:100%}
+}
