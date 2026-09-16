@@ -162,3 +162,10 @@ html,body{width:100%;max-width:100%;overflow-x:clip}
   .contact-intro-heading{font-size:clamp(1.95rem,8.7vw,2.25rem)!important;line-height:1.5}
   .cta-heading{font-size:clamp(1.95rem,8.5vw,2.2rem)!important;line-height:1.5}
 }
+
+
+/* Keep the shared CTA's second sentence on one line on phones. */
+@media(max-width:600px){
+  .contact-band .cta-heading{font-size:clamp(1.85rem,8vw,2.1rem)!important;line-height:1.55;letter-spacing:-.025em}
+  .contact-band .cta-heading>span:last-child{display:block;width:max-content;max-width:100%;white-space:nowrap}
+}
