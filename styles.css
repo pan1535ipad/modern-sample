@@ -137,3 +137,13 @@ html,body{width:100%;max-width:100%;overflow-x:clip}
 
   .term-keep{max-width:100%}
 }
+
+
+/* Meaning-based mobile heading lines */
+.meaning-heading>span{display:inline}
+@media(max-width:600px){
+  .meaning-heading .desktop-break{display:none}
+  .meaning-heading>span{display:block;width:max-content;max-width:100%;white-space:nowrap}
+  .statement .meaning-heading{font-size:clamp(2.35rem,11vw,2.8rem);line-height:1.5}
+  .maintenance .maintenance-heading{font-size:clamp(3.15rem,15vw,3.75rem);line-height:1.35}
+}
