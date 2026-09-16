@@ -147,3 +147,18 @@ html,body{width:100%;max-width:100%;overflow-x:clip}
   .statement .meaning-heading{font-size:clamp(2.35rem,11vw,2.8rem);line-height:1.5}
   .maintenance .maintenance-heading{font-size:clamp(3.15rem,15vw,3.75rem);line-height:1.35}
 }
+
+
+/* Semantic mobile heading system */
+.semantic-heading>span{display:inline}
+@media(max-width:600px){
+  .semantic-heading .desktop-break{display:none}
+  .semantic-heading>span{display:block;width:max-content;max-width:100%;white-space:nowrap}
+  .philosophy-heading{font-size:clamp(2.05rem,9.5vw,2.4rem)!important;line-height:1.5}
+  .numbers-heading{font-size:clamp(1.9rem,8.5vw,2.2rem)!important;line-height:1.5}
+  .support-heading{font-size:clamp(2.15rem,10vw,2.55rem)!important;line-height:1.45}
+  .company-message-heading{font-size:clamp(2.15rem,10vw,2.55rem)!important;line-height:1.45}
+  .representative-heading{font-size:clamp(2rem,9vw,2.3rem)!important;line-height:1.5}
+  .contact-intro-heading{font-size:clamp(1.95rem,8.7vw,2.25rem)!important;line-height:1.5}
+  .cta-heading{font-size:clamp(1.95rem,8.5vw,2.2rem)!important;line-height:1.5}
+}
