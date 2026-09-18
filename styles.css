@@ -140,20 +140,18 @@ html,body{width:100%;max-width:100%;overflow-x:clip}
 
 
 /* Meaning-based mobile heading lines */
-.meaning-heading>span{display:inline}
+
 @media(max-width:600px){
-  .meaning-heading .desktop-break{display:none}
-  .meaning-heading>span{display:block;width:max-content;max-width:100%;white-space:nowrap}
+
   .statement .meaning-heading{font-size:clamp(2.35rem,11vw,2.8rem);line-height:1.5}
   .maintenance .maintenance-heading{font-size:clamp(3.15rem,15vw,3.75rem);line-height:1.35}
 }
 
 
 /* Semantic mobile heading system */
-.semantic-heading>span{display:inline}
+
 @media(max-width:600px){
-  .semantic-heading .desktop-break{display:none}
-  .semantic-heading>span{display:block;width:max-content;max-width:100%;white-space:nowrap}
+
   .philosophy-heading{font-size:clamp(2.05rem,9.5vw,2.4rem)!important;line-height:1.5}
   .numbers-heading{font-size:clamp(1.9rem,8.5vw,2.2rem)!important;line-height:1.5}
   .support-heading{font-size:clamp(2.15rem,10vw,2.55rem)!important;line-height:1.45}
@@ -164,8 +162,12 @@ html,body{width:100%;max-width:100%;overflow-x:clip}
 }
 
 
-/* Keep the shared CTA's second sentence on one line on phones. */
+/* Shared CTA typography on phones. */
 @media(max-width:600px){
   .contact-band .cta-heading{font-size:clamp(1.85rem,8vw,2.1rem)!important;line-height:1.55;letter-spacing:-.025em}
-  .contact-band .cta-heading>span:last-child{display:block;width:max-content;max-width:100%;white-space:nowrap}
 }
+
+/* User-defined phrase boundaries on all screen sizes. */
+.phrase-heading{white-space:normal!important;text-wrap:wrap!important;word-break:normal;overflow-wrap:normal;min-width:0}
+.phrase-heading>.phrase-unit{display:inline-block;white-space:nowrap!important;text-wrap:nowrap!important;word-break:normal;overflow-wrap:normal}
+.phrase-heading>wbr{display:inline}
